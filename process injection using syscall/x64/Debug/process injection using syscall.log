@@ -1,0 +1,18 @@
+﻿  Assembling syscallstubs.std.x64.asm...
+  main.cpp
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1287,78): warning C4047: 'function': 'DWORD' differs in levels of indirection from 'void *'
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1287,74): warning C4024: 'pCreateToolhelp32Snapshot': different types for formal and actual parameter 2
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1313,2): warning C4047: '=': 'ULONG' differs in levels of indirection from 'void *'
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1314,34): warning C4312: 'type cast': conversion from 'int' to 'HANDLE' of greater size
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1319,56): warning C4047: 'function': 'ULONG' differs in levels of indirection from 'void *'
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1319,52): warning C4024: 'NtAllocateVirtualMemory': different types for formal and actual parameter 3
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1325,111): warning C4047: 'function': 'SIZE_T' differs in levels of indirection from 'void *'
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1325,107): warning C4024: 'NtCreateThreadEx': different types for formal and actual parameter 8
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1325,117): warning C4047: 'function': 'SIZE_T' differs in levels of indirection from 'void *'
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1325,113): warning C4024: 'NtCreateThreadEx': different types for formal and actual parameter 9
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1325,123): warning C4047: 'function': 'SIZE_T' differs in levels of indirection from 'void *'
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1325,119): warning C4024: 'NtCreateThreadEx': different types for formal and actual parameter 10
+D:\Project\malware\process injection using syscall\process injection using syscall\main.cpp(1321,1): warning C4047: 'initializing': 'ULONG' differs in levels of indirection from 'void *'
+  syscall.c
+  Generating Code...
+  process injection using syscall.vcxproj -> D:\Project\malware\process injection using syscall\x64\Debug\process injection using syscall.exe
