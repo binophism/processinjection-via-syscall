@@ -1,8 +1,5 @@
-# ProcessInjection via Direct Syscall
-Items that will be added in the next update :
+#ProcessInjection via Direct Syscall.
+## Upcoming features
 
-
-
-1 - use persistence teq
-
-2 - shellcode store rsrc section 
+- [ ] Use Persistence techniquesc
+- [ ] Store shellcode in .rsrc section
