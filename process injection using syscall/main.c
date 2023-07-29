@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <Windows.h>
 #include "syscall.h"
 #include "function signature.h"
-#include <TlHelp32.h>
 #pragma comment (lib, "dbghelp.lib") 
 #pragma section(".text")
 /*
