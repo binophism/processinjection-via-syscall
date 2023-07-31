@@ -16,14 +16,12 @@ int FindProcess(LPCWSTR arg_procname)
 	HANDLE hSnapshotProcess = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
 
 	if (pProcess32First(hSnapshotProcess, &processEntry) == TRUE) {
-		do
-		{
+		while (pProcess32Next(hSnapshotProcess, &processEntry) == TRUE) {
 			if (wcscmp(processEntry.szExeFile, arg_procname) == 0) {
 				PID = processEntry.th32ProcessID;
 				break;
 			}
-
-		} while (pProcess32Next(hSnapshotProcess, &processEntry) == TRUE);
+		}
 	}
 	pCloseHandle(hSnapshotProcess);
 	return PID;
