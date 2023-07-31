@@ -1,7 +1,6 @@
 #pragma once
 #include <Windows.h>
 #include <TlHelp32.h>
-typedef BOOL(WINAPI* CloseHandleEx)(HANDLE hObject);
 typedef HANDLE(WINAPI* CreateToolhelp32SnapshotEx)(DWORD dwFlags, DWORD th32ProcessID);
 typedef BOOL(WINAPI* Process32FirstEx)(HANDLE hSnapshot, LPPROCESSENTRY32W lppe);
 typedef BOOL(WINAPI* Process32NextEx)(HANDLE hSnapshot, LPPROCESSENTRY32W lppe);

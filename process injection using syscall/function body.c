@@ -8,7 +8,6 @@ int FindProcess(LPCWSTR arg_procname)
 	CreateToolhelp32SnapshotEx pCreateToolhelp32Snapshot = (CreateToolhelp32SnapshotEx)GetProcAddress(hKernel32, "CreateToolhelp32Snapshot");
 	Process32FirstEx pProcess32First = (Process32FirstEx)GetProcAddress(hKernel32, "Process32FirstW");
 	Process32NextEx pProcess32Next = (Process32NextEx)GetProcAddress(hKernel32, "Process32NextW");
-	CloseHandleEx pCloseHandle = (CloseHandleEx)GetProcAddress(hKernel32, "CloseHandle");
 	int PID = 0;
 
 	PROCESSENTRY32 processEntry;
@@ -23,7 +22,7 @@ int FindProcess(LPCWSTR arg_procname)
 			}
 		}
 	}
-	pCloseHandle(hSnapshotProcess);
+	CloseHandle(hSnapshotProcess);
 	return PID;
 }
 WCHAR* ascii_to_wide_str(CHAR* lpMultiByteStr)
