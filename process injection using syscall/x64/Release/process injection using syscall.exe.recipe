@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Project\malware\process injection using syscall\x64\Release\process injection using syscall.exe</FullPath>
+      <FullPath>D:\Project\file\processinjection-via-syscall\x64\Release\process injection using syscall.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

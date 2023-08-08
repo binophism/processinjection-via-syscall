@@ -134,10 +134,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="function body.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="syscall.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="function signature.h" />
     <ClInclude Include="syscall.h" />
     <ClInclude Include="syscallinline.std.x64.h" />
   </ItemGroup>

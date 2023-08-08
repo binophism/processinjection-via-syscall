@@ -21,12 +21,18 @@
     <ClCompile Include="syscall.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="function body.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="syscall.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="syscallinline.std.x64.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="function signature.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
