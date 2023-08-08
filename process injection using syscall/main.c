@@ -3,7 +3,7 @@
 #include <Windows.h>
 #include "syscall.h"
 #include "function signature.h"
-#pragma comment (lib, "dbghelp.lib") 
+#pragma comment (lib, "advapi32")
 #pragma section(".text")
 /*
 programmer : MrBlackZero
