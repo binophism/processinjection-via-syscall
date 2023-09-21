@@ -43,7 +43,7 @@ int main(){
 			CloseHandle(hThread);
 		}
 	}__except (EXCEPTION_ACCESS_VIOLATION | EXCEPTION_EXECUTE_HANDLER) {
-		printf("[ERROR] %x\n", GetLastError());
+		printf("[ERROR] %u\n", GetLastError());
 	}
 	return EXIT_SUCCESS;
 }
