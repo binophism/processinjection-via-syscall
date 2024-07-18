@@ -6,8 +6,8 @@
 #pragma comment (lib, "advapi32")
 #pragma section(".text")
 /*
-programmer : MrBlackZero
-github page: https://github.com/MrBlackZero
+programmer : binophism
+github page: https://github.com/binophism
 */
 _declspec(allocate(".text"))UCHAR ShellCode[] = "\x90\x90\x90\xcc\xcc\xcc\xc3";
 SIZE_T ShellCodeSize= _countof(ShellCode);
